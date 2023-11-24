@@ -29,8 +29,3 @@ updates:
     schedule:
       interval: "weekly"
     open-pull-requests-limit: 10
-
-# Configure commit message prefix, useful for filtering
-commit-message:
-  prefix: "chore"  # Prefix like 'fix', 'chore', 'feat', etc.
-  include: "scope"  # Include the package ecosystem in the commit message
