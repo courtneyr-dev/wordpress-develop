@@ -8,3 +8,29 @@ updates:
     schedule:
       interval: "daily"
     open-pull-requests-limit: 10
+
+  # Enable updates for PHP dependencies via Composer
+  - package-ecosystem: "composer" 
+    directory: "/"  # Root directory where composer.json is located
+    schedule:
+      interval: "weekly"  # Check for updates weekly
+    open-pull-requests-limit: 10
+
+  # Enable updates for JavaScript dependencies (NPM/Yarn)
+  - package-ecosystem: "npm" 
+    directory: "/"  # Adjust if JS package.json is located in a different directory
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+
+  # Enable updates for Docker dependencies, if used
+  - package-ecosystem: "docker" 
+    directory: "/"  # Adjust if Docker files are located in a different directory
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+
+# Configure commit message prefix, useful for filtering
+commit-message:
+  prefix: "chore"  # Prefix like 'fix', 'chore', 'feat', etc.
+  include: "scope"  # Include the package ecosystem in the commit message
